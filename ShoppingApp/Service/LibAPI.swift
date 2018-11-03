@@ -5,16 +5,17 @@
 //  Created by Rahul on 07/10/18.
 //  Copyright © 2018 Rahul. All rights reserved.
 //
-//Facade Pattern
+
 import Foundation
 import UIKit
 
 final class LibAPI {
+    //Facade Pattern by hiding the logic behind persistentManager and httpClient classes
     private let persistentManager = PersistentManager()
     private let httpClient = HttpService()
     //private let isOnline = false
     let url = "https://jsonplaceholder.typicode.com/photos"
-    
+    //Singleton Pattern using static constant approach and private initializer prevents creating new instance
     static let shared = LibAPI()
     
     private init() {

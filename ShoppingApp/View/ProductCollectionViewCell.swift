@@ -18,6 +18,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
         titleLabel.text = product.title
         priceLabel.text = String (product.price)
         self.activityIndicatorView.startAnimating()
+        // Observer Pattern using NotificationCenter to notify other object to download image
         NotificationCenter.default.post(name: .SHDownloadImage, object: self, userInfo: ["imageView": productImageView, "imageURL": product.imageURL, "loadingSpinner": activityIndicatorView])
     }
     
